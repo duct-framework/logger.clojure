@@ -5,7 +5,7 @@
 Integrant multimethods for setting up a [tools.logging][] logger for
 the [Duct][] framework.
 
-[timbre]: https://github.com/clojure/tools.logging
+[tools.logging]: https://github.com/clojure/tools.logging
 [duct]: https://github.com/duct-framework/duct
 
 ## Installation
