@@ -25,3 +25,24 @@
     (is (re-find #"ERROR duct\.logger\.clojure-test - :test/d\n" output))
     (is (re-find #"ERROR duct\.logger\.clojure-test - :test/e\n" output))
     (is (re-find #"INFO duct\.logger\.clojure-test - :test/f\n" output))))
+
+(deftest log-data-test
+  (let [config {:duct.logger/clojure {}}
+        logger (:duct.logger/clojure (ig/init config))
+        output (outcap/with-test-buffer
+                 (outcap/with-capture
+                   (logger/info logger :test/a {:other "info"}))
+                 (outcap/read-test-buffer))]
+    (is (re-find #"INFO duct\.logger\.clojure-test - :test/a \{:other \"info\"\}\n" output))))
+
+(deftest log-exception-test
+  (let [config {:duct.logger/clojure {}}
+        logger (:duct.logger/clojure (ig/init config))
+        output (outcap/with-test-buffer
+                 (outcap/with-capture
+                   (logger/error logger :test/ex (Exception. "test")))
+                 (outcap/read-test-buffer))]
+    (is (re-find
+         #"ERROR duct\.logger\.clojure-test - :test/ex\njava\.lang\.Exception: test\n"
+         output))
+    (is (re-find #"at duct\.logger\.clojure_test" output))))
