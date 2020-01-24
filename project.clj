@@ -9,4 +9,5 @@
                  [duct/logger "0.3.0"]
                  [integrant "0.8.0"]]
   :profiles
-  {:dev {:dependencies [[eftest "0.5.9"]]}})
+  {:dev {:dependencies [[eftest "0.5.9"]
+                        [org.slf4j/slf4j-simple "1.7.30"]]}})
