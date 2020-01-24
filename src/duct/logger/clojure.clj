@@ -11,6 +11,8 @@
           level  (if (= level :report) :info level)
           logger (impl/get-logger log/*logger-factory* ns)]
       (cond
+        (instance? Throwable event)
+        (log/log* logger level event nil)
         (instance? Throwable data)
         (log/log* logger level data (pr-str event)) 
         (nil? data)

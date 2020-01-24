@@ -40,9 +40,13 @@
         logger (:duct.logger/clojure (ig/init config))
         output (outcap/with-test-buffer
                  (outcap/with-capture
-                   (logger/error logger :test/ex (Exception. "test")))
+                   (logger/warn logger :test/ex (Exception. "a"))
+                   (logger/error logger (Exception. "b")))
                  (outcap/read-test-buffer))]
     (is (re-find
-         #"ERROR duct\.logger\.clojure-test - :test/ex\njava\.lang\.Exception: test\n"
+         #"WARN duct\.logger\.clojure-test - :test/ex\njava\.lang\.Exception: a\n"
+         output))
+    (is (re-find
+         #"ERROR duct\.logger\.clojure-test - \njava\.lang\.Exception: b\n"
          output))
     (is (re-find #"at duct\.logger\.clojure_test" output))))
