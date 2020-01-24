@@ -7,8 +7,7 @@
 (defrecord ClojureLogger []
   logger/Logger
   (-log [_ level ns _ _ _ event data]
-    (let [ns     (find-ns (symbol ns))
-          level  (if (= level :report) :info level)
+    (let [level  (if (= level :report) :info level)
           logger (impl/get-logger log/*logger-factory* ns)]
       (cond
         (instance? Throwable event)
