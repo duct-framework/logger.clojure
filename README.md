@@ -12,7 +12,7 @@ the [Duct][] framework.
 
 To install, add the following to your project `:dependencies`:
 
-    [duct/logger.clojure "0.1.0"]
+    [duct/logger.clojure "0.1.1"]
 
 ## Usage
 
