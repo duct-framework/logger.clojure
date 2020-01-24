@@ -1,6 +1,6 @@
 (defproject duct.logger.clojure "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "Integrant methods for the tools.logging library"
+  :url "https://github.com/duct-framework/logger.clojure"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]
