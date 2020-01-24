@@ -1,5 +1,7 @@
 # Duct logger.clojure
 
+[![Build Status](https://travis-ci.org/duct-framework/logger.clojure.svg?branch=master)](https://travis-ci.org/duct-framework/logger.clojure)
+
 Integrant multimethods for setting up a [tools.logging][] logger for
 the [Duct][] framework.
 
