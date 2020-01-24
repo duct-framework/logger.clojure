@@ -1,4 +1,4 @@
-(defproject duct.logger.clojure "0.1.0-SNAPSHOT"
+(defproject duct.logger.clojure "0.1.0"
   :description "Integrant methods for the tools.logging library"
   :url "https://github.com/duct-framework/logger.clojure"
   :license {:name "Eclipse Public License"
