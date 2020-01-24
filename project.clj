@@ -3,4 +3,10 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.7.0"]])
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/tools.logging "0.5.0"]
+                 [duct/core "0.8.0"]
+                 [duct/logger "0.3.0"]
+                 [integrant "0.8.0"]]
+  :profiles
+  {:dev {:dependencies [[eftest "0.5.9"]]}})
